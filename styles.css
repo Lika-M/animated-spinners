@@ -36,14 +36,15 @@ h1 {
     /* background-color: pink; */
 }
 
+/*spinner 1*/
 .spinner-1::after {
     position: absolute;
     top: -4px;
     left: -4px;
     border: 4px solid transparent;
-    border-top: 4px solid orangered;
-    border-bottom: 4px solid orangered;
-    animation: spinner-1 1s linear infinite ;
+    border-top: 4px solid red;
+    border-bottom: 4px solid red;
+    animation: spinner-1 1s linear infinite;
 }
 
 @keyframes spinner-1 {
@@ -51,9 +52,54 @@ h1 {
         transform: rotate(0deg) scale(1);
     }
     50% {
-        transform: rotate(60deg) scale(1.2);
+        transform: rotate(30deg) scale(1.2);
     }
     100% {
         transform: rotate(360deg) scale(1);
+    }
+}
+
+/*spinner 2*/
+/* .spinner-2{
+    animation: rotate 2s linear infinite;
+} */
+
+.spinner-2::before,
+.spinner-2::after {
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    margin-left: -10px;
+    animation: spinner-2 1s ease-in infinite;
+}
+
+.spinner-2::after{
+    top: auto;
+    bottom: -20px;
+    animation: spinner-2 0.5s ease-out infinite;
+}
+
+@keyframes spinner-2 {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    80% {
+        transform: translateY(10px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }
